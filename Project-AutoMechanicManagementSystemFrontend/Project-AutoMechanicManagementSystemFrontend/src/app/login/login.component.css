@@ -1,0 +1,16 @@
+* {
+    color: #dc3545;
+    margin: #dc3545;
+}
+
+.center {
+    padding: 0 40%;
+}
+
+.vert_align {
+    margin-top: 15rem;
+}
+
+input {
+    margin-left: 5px;
+}

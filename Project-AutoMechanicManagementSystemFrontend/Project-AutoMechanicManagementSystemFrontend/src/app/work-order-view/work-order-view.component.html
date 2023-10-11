@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-6 text-center">
+        <h4 class="mb-3 text-danger">Work Order</h4>
+        <input type="button" class="w-25 btn btn-danger text-dark" value="Back" (click)="goBack()">
+        <input type="button" id="edit" class="w-25 btn btn-danger text-dark" value="Edit" routerLink="/updateOrder/{{workOrder.id}}">
+        <div class="row g-3">
+            <div class="col-sm-6" *ngIf="customer" routerLink="/viewCustomer/{{customer.id}}">
+                <label for="customer" class="form-label h3 text-danger">Customer</label>
+                <p id="customer" class="text-danger">{{ customer_name }}</p>
+            </div>
+
+            <div class="col-sm-6">
+                <label for="vehicle" class="form-label h3 text-danger">Vehicle</label>
+                <p id="vehicle" class="text-danger">{{ vehicle_descriptor }}</p>
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-sm-6">
+                <label for="start_date" class="form-label h3 text-danger">Start Date</label>
+                <p id="start_date" class="text-danger">{{ start_date }}</p>
+            </div>
+
+            <div class="col-sm-6">
+                <label for="cost" class="form-label h3 text-danger">Cost</label>
+                <p id="cost" class="text-danger">${{ cost }}</p>
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-sm-12">
+                <label for="description" class="form-label h3 text-danger">Description</label>
+                <p id="description" class="text-danger">{{ description }}</p>
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <table class="col-sm-12 text-center">
+                <tr>
+                    <th class="h3 text-danger">Parts</th>
+                </tr>
+
+                <tr *ngFor="let part of parts" class="text-danger">{{ part.part.name }}   ${{ part.part.price }}</tr>
+            </table>
+        </div>
+    </div>
+</div>

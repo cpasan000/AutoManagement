@@ -1,0 +1,26 @@
+<div class="table-responsive container-fluid">
+    <table class="table table-striped table-sm ">
+        <thead class="text-center">
+            <tr>
+                <!-- Insert Headers here  -->
+                <th class="text-danger" scope="col">ID</th>
+                <th class="text-danger" scope="col">Customer Name</th>
+                <th class="text-danger" scope="col">Start Date</th>
+                <th class="text-danger" scope="col">Vehicle ID</th>
+                <th class="text-danger" scope="col">Total Cost</th>
+            </tr>
+        </thead>
+
+        
+        <tbody class="text-center">
+            <!-- insert data into here when you get it -->
+            <tr *ngFor="let workOrder of workOrders" routerLink="/viewOrder/{{workOrder.id}}">
+                <td class="text-danger">{{workOrder.id}}</td>
+                <td class="text-danger">{{workOrder.vehicleId.customerId.firstName}} {{workOrder.vehicleId.customerId.lastName}}</td>
+                <td class="text-danger">{{workOrder.date}}</td>
+                <td class="text-danger">{{workOrder.vehicleId.id}}</td>
+                <td class="text-danger">${{workOrder.cost}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

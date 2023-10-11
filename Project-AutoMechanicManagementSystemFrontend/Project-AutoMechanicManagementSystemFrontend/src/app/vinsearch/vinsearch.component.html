@@ -1,0 +1,12 @@
+<div id="vin-search-component">
+	<label class="text-danger" for="vin-search-box">Vin Search</label>
+	<input #searchBox id="vin-search-box" class="text-danger" (input)="search(searchBox.value)" />
+
+	<ul class="search-result">
+		<li class="text-danger" *ngFor="let vehicle of vehicles | async" >
+			<a class="text-danger" routerLink="/vin/{{vehicle.vin}}">
+				{{vehicle.vin}}
+			</a>
+		</li>
+	</ul>
+</div>

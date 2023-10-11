@@ -1,0 +1,64 @@
+<form class="needs-validation" novalidate="">
+    <div class="row g-3">
+
+        <div class="col-sm-6">
+            <label for="customer" class="form-label text-danger">Customer</label>
+            <select id="customer" name="customer" class="form-control text-danger bg-dark" [formControl]="customer" (click)="getCustomer()" >
+                <option>Select a customer</option>
+                <option *ngFor="let customer of customers">{{customer.id}} {{customer.firstName}} {{customer.lastName}}</option>
+            </select>
+            <div class="invalid-feedback">
+                Valid  Customer is required.
+            </div>
+        </div>
+
+        
+        <div class="col-sm-6">
+            <label for="vin" class="form-label text-danger">Vin</label>
+            <input type="text" class="form-control bg-dark text-danger" id="vin" placeholder="" value="" required=""
+            [formControl]="vin">
+            <div class="invalid-feedback">
+                Valid  vin is required.
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <label for="make" class="form-label text-danger">Make</label>
+            <input type="text" class="form-control bg-dark text-danger" id="lastName" placeholder="" value="" required="" 
+            [formControl]="make">
+            <div class="invalid-feedback">
+                Valid make is required.
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <label for="model" class="form-label text-danger">Model</label>
+            <input type="text" class="form-control text-danger bg-dark" id="model" placeholder="" value="" required=""
+            [formControl]="model">
+            <div class="invalid-feedback">
+                Valid model name is required.
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <label for="year" class="form-label text-danger">Year</label>
+            <input type="text" class="form-control text-danger bg-dark" id="year" placeholder="" value="" required="" 
+            [formControl]="year">
+            <div class="invalid-feedback">
+
+                Valid year name is required.
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <label for="mileage" class="form-label text-danger">Mileage</label>
+            <input type="text" class="form-control text-danger bg-dark" id="mileage" placeholder="" value="" required="" 
+            [formControl]="mileage">
+            <div class="invalid-feedback">
+                Valid year Mileage is required.
+            </div>
+        </div>
+
+    </div>
+    <hr class="my-4">
+    <button class="w-100 btn btn-danger text-dark btn-lg" (click)="addVehicle()">Add Vehicle</button>
+</form> 

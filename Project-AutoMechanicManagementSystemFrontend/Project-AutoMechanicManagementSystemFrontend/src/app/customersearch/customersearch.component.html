@@ -1,0 +1,12 @@
+<div id="customer-search-component">
+	<label for="customer-search-box" class="text-danger">Phone Search</label>
+	<input #searchBox id="customer-search-box" class="text-danger" (input)="search(searchBox.value)" />
+
+	<ul class="search-result">
+		<li class="text-danger" *ngFor="let customer of customers | async" >
+			<a class="text-danger" routerLink="/phone/{{customer.phoneNumber}}">
+				{{customer.phoneNumber}}
+			</a>
+		</li>
+	</ul>
+</div>
